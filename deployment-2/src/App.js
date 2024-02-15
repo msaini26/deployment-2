@@ -4,8 +4,21 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import PrototypeResult from "./PrototypeResult";
-import SceneFlow from "./SceneFlow";
-import SplashExperience from "./SplashExperience";
+import ElevatorPitch from "./assets/Elevator_Pitch.exe";
+
+const downloadExeFile = () => {
+  // file object
+  const file = new Blob([ElevatorPitch], { type: "application/octet-stream" });
+  // anchor link
+  const element = document.createElement("a");
+  element.href = URL.createObjectURL(file);
+  element.download = "Elevator_Pitch.exe";
+  // simulate link click
+  document.body.appendChild(element); // Required for this to work in FireFox
+  console.log(element);
+  element.click();
+  document.body.removeChild(element);
+};
 
 function Copyright() {
   return (
@@ -26,12 +39,18 @@ export default function App() {
         </Typography>
 
         <Typography variant="h4" component="h1" sx={{ mb: 2 }}>
-          Prototype Design Documentation
+          Download Interactive Prototype
         </Typography>
         <Typography variant="body1" align="left" sx={{ mb: 5 }}>
           This is the second prototype deployment of Elevator Pitch.
         </Typography>
         <PrototypeResult />
+
+        <div className="btnDiv">
+          <button id="downloadBtn" onClick={downloadExeFile} value="download">
+            Download
+          </button>
+        </div>
 
         <Copyright />
       </Box>
