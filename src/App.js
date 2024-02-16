@@ -19,6 +19,7 @@ const downloadPrototype = () => {
       alink.href = fileURL;
       alink.download = "Elevator_Pitch.zip";
       alink.click();
+      console.log("Downloading Elevator Pitch prototype...");
     });
   });
 };
