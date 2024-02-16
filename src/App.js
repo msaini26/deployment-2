@@ -53,6 +53,8 @@ export default function App() {
           1. Click the download button below to download the interactive Unity
           prototype of Elevator Pitch.
           <br></br>
+          <strong><i>Note: It may take a second to download depending on your internet speed.</i></strong>
+        <br></br>
           2. Unzip the downloaded folder.
           <br></br>
           3. Open the unzipped folder and double click on the{" "}
