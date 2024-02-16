@@ -4,12 +4,12 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 import PrototypeResult from "./PrototypeResult";
-import ElevatorPitch from "./assets/Elevator_Pitch.exe";
+import ElevatorPitch from "./assets/Elevator_Pitch_Prototype.zip";
 
  // Function will execute on click of button
  const onButtonClick = () => {
      
-  // using Java Script method to get PDF file
+  // using js fetch method to download elevator pitch zip file
   fetch(ElevatorPitch).then((response) => {
       response.blob().then((blob) => {
        
@@ -20,7 +20,7 @@ import ElevatorPitch from "./assets/Elevator_Pitch.exe";
           // Setting various property values
           let alink = document.createElement("a");
           alink.href = fileURL;
-          alink.download = "Elevator_Pitch.exe";
+          alink.download = "Elevator_Pitch.zip";
           alink.click();
       });
   });
@@ -64,14 +64,15 @@ export default function App() {
         <Typography variant="body1" align="left" sx={{ mb: 5 }}>
           This is the second prototype deployment of Elevator Pitch.
         </Typography>
-        <PrototypeResult />
-
         <div className="btnDiv">
           <button id="downloadBtn" onClick={onButtonClick} value="download">
             Download
           </button>
         </div>
 
+        <PrototypeResult />
+
+     
         <Copyright />
       </Box>
     </Container>
