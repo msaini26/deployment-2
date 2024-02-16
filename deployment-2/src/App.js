@@ -6,6 +6,26 @@ import Link from "@mui/material/Link";
 import PrototypeResult from "./PrototypeResult";
 import ElevatorPitch from "./assets/Elevator_Pitch.exe";
 
+ // Function will execute on click of button
+ const onButtonClick = () => {
+     
+  // using Java Script method to get PDF file
+  fetch(ElevatorPitch).then((response) => {
+      response.blob().then((blob) => {
+       
+          // Creating new object of PDF file
+          const fileURL =
+              window.URL.createObjectURL(blob);
+               
+          // Setting various property values
+          let alink = document.createElement("a");
+          alink.href = fileURL;
+          alink.download = "Elevator_Pitch.exe";
+          alink.click();
+      });
+  });
+};
+
 const downloadExeFile = () => {
   // file object
   const file = new Blob([ElevatorPitch], { type: "application/octet-stream" });
@@ -47,7 +67,7 @@ export default function App() {
         <PrototypeResult />
 
         <div className="btnDiv">
-          <button id="downloadBtn" onClick={downloadExeFile} value="download">
+          <button id="downloadBtn" onClick={onButtonClick} value="download">
             Download
           </button>
         </div>
