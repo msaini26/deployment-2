@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import PrototypeResult from "./PrototypeResult";
 import ElevatorPitch from "./assets/Elevator_Pitch_Prototype.zip";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Button from "@mui/material/Button";
 
 // function will download a zip file of elevator pitch prototype
