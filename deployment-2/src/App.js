@@ -51,10 +51,16 @@ export default function App() {
         </Typography>
         <Typography variant="body2" align="left" sx={{ mb: 5 }}>
           1. Click the download button below to download the interactive Unity
-          prototype of Elevator Pitch. <br></br> 2. Unzip the downloaded file.
+          prototype of Elevator Pitch.
           <br></br>
-          3. Open the unzipped folder and double click on the Elevator_Pitch.exe
-          file to run the prototype. <br></br>
+          2. Unzip the downloaded folder.
+          <br></br>
+          3. Open the unzipped folder and double click on the{" "}
+          <strong>
+            <code>Elevator Pitch.exe </code>
+          </strong>
+          file to run the prototype.
+          <br></br>
           4. Use your mouse or trackpad to experiment in the prototype
           environment. Enjoy! 🎉
         </Typography>
