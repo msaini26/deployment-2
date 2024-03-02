@@ -37,7 +37,7 @@ const downloadPrototype = () => {
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="text.secondary" align="center" sx={{fontFamily: "Chop"}}>
       {"Copyright © "}
       Elevator Pitch {new Date().getFullYear()}
       {"."}
