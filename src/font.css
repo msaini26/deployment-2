@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'VerveRegular';
+    src: local('VerveRegular'),
+    url('./fonts/Verve.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VerveAlt';
+    src: local('VerveAlt'),
+    url('./fonts/VerveAlternate.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'VerveShadow';
+    src: url('./fonts/VerveShadow.ttf') format('truetype');
+}
+
+/* testing fonts */
+@font-face {
+    font-family: 'TitaniaOutline';
+    src: url('./fonts/Titania-Outline.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TitaniaRegular';
+    src: url('./fonts/Titania-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'TitaniaShadow';
+    src: url('./fonts/Titania-Shadow.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Book';
+    src: url('./fonts/Book.otf');
+}
+
+@font-face {
+    font-family: 'Chop';
+    src: url('./fonts/Chopper.ttf');
+}
