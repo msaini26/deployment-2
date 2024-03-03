@@ -5,9 +5,10 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { Button, CardActionArea, CardActions, Stack } from "@mui/material";
+import { Button, CardActionArea, CardActions } from "@mui/material";
 import protoResult from "./assets/crazy.gif";
 import anotherResult from "./assets/yessir.gif";
+import Stack from '@mui/material/Stack';
 
 export default function PrototypeResult() {
   return (
