@@ -10,3 +10,21 @@
     transform: none;
     visibility: visible;
   }
+
+  .blink {
+    animation: blink-animation 1s infinite;
+    font-family: 'VerveRegular';
+    color: black;
+  }
+  
+  @keyframes blink-animation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
