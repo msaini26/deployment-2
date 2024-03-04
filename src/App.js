@@ -7,7 +7,6 @@ import ElevatorPitch from "./assets/Elevator_Pitch_Prototype.zip";
 import Button from "@mui/material/Button";
 import "./fade.css";
 import colors from "./css-colors";
-import Blink from "react-blink-text";
 
 // font importing
 import "./font.css";
