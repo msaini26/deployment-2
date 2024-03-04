@@ -9,11 +9,12 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@emotion/react": "latest",
-    "@emotion/styled": "latest",
-    "@mui/material": "latest",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.11",
+    "@tsparticles/react": "^3.0.0",
     "font-face": "^2.3.4",
-    "react": "latest",
+    "react": "^18.2.0",
     "react-dom": "latest",
     "react-scripts": "latest"
   },

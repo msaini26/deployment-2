@@ -5,6 +5,9 @@ import Box from "@mui/material/Box";
 import PrototypeResult from "./PrototypeResult";
 import ElevatorPitch from "./assets/Elevator_Pitch_Prototype.zip";
 import Button from "@mui/material/Button";
+import "./fade.css";
+import colors from './css-colors';
+
 
 // font importing
 import "./font.css";
@@ -15,7 +18,7 @@ import "./fonts/Titania-Outline.ttf";
 import "./fonts/Titania-Shadow.ttf";
 import "./fonts/Titania-Regular.ttf";
 import "./fonts/Book.otf";
-import "./fonts/Chopper.ttf"
+import "./fonts/Chopper.ttf";
 
 // function will download a zip file of elevator pitch prototype
 const downloadPrototype = () => {
@@ -35,9 +38,22 @@ const downloadPrototype = () => {
   });
 };
 
+const gradientStyle = {
+  background: 'hsla(24, 100%, 50%, 1)',
+  background: 'linear-gradient(150deg, hsla(24, 100%, 50%, 1) 10%, hsla(37, 100%, 48%, 1) 37%, hsla(45, 100%, 50%, 1) 69%, hsla(60, 100%, 50%, 1) 100%)',
+  background: '-moz-linear-gradient(150deg, hsla(24, 100%, 50%, 1) 10%, hsla(37, 100%, 48%, 1) 37%, hsla(45, 100%, 50%, 1) 69%, hsla(60, 100%, 50%, 1) 100%)',
+  background: '-webkit-linear-gradient(150deg, hsla(24, 100%, 50%, 1) 10%, hsla(37, 100%, 48%, 1) 37%, hsla(45, 100%, 50%, 1) 69%, hsla(60, 100%, 50%, 1) 100%)',
+  filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#FF6400", endColorstr="#F59900", GradientType=1)'
+};
+
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" sx={{fontFamily: "Chop"}}>
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      sx={{ fontFamily: "Chop" }}
+    >
       {"Copyright © "}
       Elevator Pitch {new Date().getFullYear()}
       {"."}
@@ -45,28 +61,71 @@ function Copyright() {
   );
 }
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(false);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+  }, []);
+  return (
+    <div
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}
+    >
+      {props.children}
+    </div>
+  );
+}
+
+
 export default function App() {
   return (
     <Container maxWidth="md">
+  
+  <FadeInSection>
       <Box sx={{ my: 4 }}>
-        <Typography variant="h2" component="h1" sx={{ mb: 5, fontFamily: "VerveRegular" }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{ mb: 5, fontFamily: "VerveRegular" }}
+        >
           Elevator Pitch Deployment #2
-        </Typography>  
+        </Typography>
 
-        <Typography variant="h4" component="h1" sx={{ mb: 2, fontFamily: "VerveAlt" }}>
+        <Typography
+          variant="h4"
+          component="h1"
+          sx={{ mb: 2, fontFamily: "VerveAlt" }}
+        >
           Download Interactive Prototype
         </Typography>
-        <Typography variant="body1" align="left" sx={{ mb: 5, fontFamily: "Chop", letterSpacing: "3px" }}>
+        <Typography
+          variant="body1"
+          align="left"
+          sx={{ mb: 5, fontFamily: "Chop", letterSpacing: "3px" }}
+        >
           Welcome to Elevator Pitch! Click the download button below to download
           the interactive Unity prototype of Elevator Pitch.
         </Typography>
-        <Typography variant="body2" align="left" sx={{ mb: 5, fontFamily: "Chop", letterSpacing: "3px", }}>
+        <Typography
+          variant="body2"
+          align="left"
+          sx={{ mb: 5, fontFamily: "Chop", letterSpacing: "3px" }}
+        >
           1. Click the download button below to download the interactive Unity
           prototype of Elevator Pitch.
           <br></br>
-          <strong><i>Note: It may take a second to download depending on your internet speed.</i></strong>
-        <br></br>
-        <br></br>
+          <strong>
+            <i>
+              Note: It may take a second to download depending on your internet
+              speed.
+            </i>
+          </strong>
+          <br></br>
+          <br></br>
           2. Unzip the downloaded folder.
           <br></br>
           <br></br>
@@ -82,7 +141,12 @@ export default function App() {
         </Typography>
         <Button
           variant="outlined"
-          sx={{ mb: 5, fontSize: "20px", fontFamily: "TitaniaRegular", textTransform: "none" }}
+          sx={{
+            mb: 5,
+            fontSize: "20px",
+            fontFamily: "TitaniaRegular",
+            textTransform: "none",
+          }}
           onClick={downloadPrototype}
           value="download"
         >
@@ -93,6 +157,7 @@ export default function App() {
 
         <Copyright />
       </Box>
+      </FadeInSection>
     </Container>
   );
 }
